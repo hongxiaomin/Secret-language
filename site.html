@@ -1,0 +1,280 @@
+<?php
+use yii\helpers\Url;
+
+// 设置页面title
+$this->title = '登录';
+// 设置 keywords
+$this->registerMetaTag( [ 'name' => 'keywords', 'content' => Yii::$app->params[ 'keywords' ] ] );
+// 设置description
+$this->registerMetaTag( [ 'name' => 'description', 'content' => Yii::$app->params[ 'description' ] ] );
+// 加载css
+$this->registerCssFile( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/css/mui.min.css', ['depends'=>['secret\assets\AppAsset']]);
+$this->registerCssFile( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/css/base.css', ['depends'=>['secret\assets\AppAsset']]);
+$this->registerCssFile( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/css/style.css', ['depends'=>['secret\assets\AppAsset']]);
+$this->registerCssFile( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/css/font-awesome.min.css', ['depends'=>['secret\assets\AppAsset']]);
+// 加载js
+$this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/jquery-1.11.3.min.js', ['depends'=>['secret\assets\AppAsset']]);
+// $this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/swiper3.07.min.js', ['depends'=>['secret\assets\AppAsset']]);
+$this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/mui.min.js', ['depends'=>['secret\assets\AppAsset']]);
+// $this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/mui.zoom.js', ['depends'=>['secret\assets\AppAsset']]);
+// $this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/mui.previewimage.js', ['depends'=>['secret\assets\AppAsset']]);
+// $this->registerJsFile ( Yii::$app->params['static_cdn'].'/static/'.USE_VERSION.'/js/base.js', ['depends'=>['secret\assets\AppAsset']]);
+?>
+
+<section class="sd_xsd_xsrerxc">
+	<form action="" method="">
+		<input type="hidden" name="latitude" id="latitude" value="">
+        <input type="hidden" name="longitude" id="longitude" value="">
+        <input type="hidden" name="accuracy" id="accuracy" value="">
+        <input type="hidden" name="networkType" id="networkType" value="">
+		<ul class="sd_iu_ul mui-col-xs-10 cm-flex">
+			<li>
+				<input type="tel" id="phone" maxlength="11" placeholder="请输入手机号码" class="fz14">
+			</li>
+
+			<li class="pr cm-code">
+				<input type="text" maxlength="4" id="verifyCode" placeholder="请输入验证码" class="fz14">
+				<span class="red sd_uiuy_xsdxd getVerifyCode">获取验证码</span>
+			</li>
+			<li class="mt20">
+				<a class="mui-btn sd_xsd_xsd_xdrxfx">登录并注册</a>
+			</li>
+		</ul>
+
+	</form>
+   
+	<p class="fz12 cf ssd_xsd_xserxr">
+		注册即视为您已同意
+		<span class="ye">用户服务协议</span>
+	</p>
+
+</section>
+
+<?php
+$getVerifyCodeUrl = Url::toRoute ( '/'.USE_VERSION.'/sms/send' ); // 获取验证码url
+$bindPhone        = Url::toRoute ( 'wxauthorize/bind-phone' );
+$csrf             = yii::$app->request->csrfToken;
+$this->registerJsFile(Yii::$app->params['static_cdn'].'/js/mui.min.js');
+
+$js = <<< JS
+    
+    $('body').height(innerHeight);
+	
+	mui.init();
+    $(function() {
+		var opu = 29,//倒计时默认值
+			jhgg = true;
+		$(".sd_uiuy_xsdxd").on("click", function() { //获取验证码点击事件
+			if(jhgg == true) {
+				
+			    /*	在这写异步请求 */
+			    var phone = document.getElementById('phone').value;
+
+		        var t = this.text;
+		        // 检测变量
+		        if(!phone || phone.trim() == "") {
+		            mui.alert("请输入手机号码");
+		            return false;
+		        }
+		        if(phone.length != 11) {
+		            mui.alert("手机号码格式不合法");
+		            return false;
+		        }
+			    // 获取验证码
+	            mui.ajax('{$getVerifyCodeUrl}',{
+	                data:{
+	                    'mobile':phone,
+	                    'methods':'login',
+	                    '_csrf' : '{$csrf}'
+	                },
+	                dataType:'json',
+	                type:'POST',
+	                timeout:5000,
+	                success:function(response){
+	                	if(response.code == '0')
+	                	{
+	                		jhgg = false;
+							$(".sd_uiuy_xsdxd").text("30s");
+
+							var sdf_wer = setInterval(function() {
+								$(".sd_uiuy_xsdxd").text((opu--) + "s")
+								if(opu < 0) {
+									$(".sd_uiuy_xsdxd").text("获取验证码");
+									jhgg = true;
+									opu = 29;
+									clearTimeout(sdf_wer);
+								}
+							}, 1000);
+							
+		                    mui.toast(response.message);
+	                	}else{
+	                		mui.toast(response.message);
+	                		return false;
+	                	}
+	                },
+	                error:function(xhr,type,errorThrown){
+	                    //异常处理；
+	                    console.log(type);
+	                    mui.toast('发送失败, 请重试.');
+	                }
+	            });
+			}
+		});
+	});
+
+
+    // mui.init();
+    // var Times = function() {
+    //     setTimeout(function(){
+    //         var t = $(".getVerifyCode").text();
+    //         var reg = /^[0-9]*$/;
+    //         if(reg.test(t)){
+    //             t--;
+    //         }
+    //         if(t<0){
+    //             $(".getVerifyCode").text("获取验证码");
+    //         } else {
+    //             $(".getVerifyCode").text(t);
+    //             Times();
+    //         }
+    //     },1000);
+    // }
+
+    // // 获取验证码
+    // mui(".cm-flex").on('tap', '.getVerifyCode', function(){
+    //     var phone = document.getElementById('phone').value;
+
+    //     var t = this.text;
+    //     // 检测变量
+    //     if(!phone || phone.trim() == "") {
+    //         mui.alert("请输入手机号码");
+    //         return false;
+    //     }
+    //     if(phone.length != 11) {
+    //         mui.alert("手机号码格式不合法");
+    //         return false;
+    //     }
+    //     var reg = /^[0-9]*$/;
+    //     if(!reg.test(t)){
+    //         $(this).text(30);
+    //         Times();
+    //         // 获取验证码
+    //         mui.ajax('{$getVerifyCodeUrl}',{
+    //             data:{
+    //                 'mobile':phone,
+    //                 'methods':'login',
+    //                 '_csrf' : '{$csrf}'
+    //             },
+    //             dataType:'json',
+    //             type:'POST',
+    //             timeout:5000,
+    //             success:function(response){
+    //                 mui.toast(response.message);
+    //             },
+    //             error:function(xhr,type,errorThrown){
+    //                 //异常处理；
+    //                 console.log(type);
+    //                 mui.toast('发送失败, 请重试.');
+    //             }
+    //         });
+    //     }
+    // });
+
+    // // 登录
+    // mui(".mui-content-padded").on('tap','.signin-or-signup',function(){
+    //     var phone       = document.getElementById('phone').value;
+    //     var verifyCode  = document.getElementById('verifyCode').value;
+    //     var latitude    = document.getElementById('latitude').value;
+    //     var longitude   = document.getElementById('longitude').value;
+    //     var accuracy    = document.getElementById('accuracy').value;
+    //     var networkType = document.getElementById('networkType').value;
+        
+    //     // 检测变量
+    //     if(!phone || phone.trim() == "") {
+    //         mui.alert("请输入手机号码");
+    //         return false;
+    //     }
+    //     if(phone.length != 11) {
+    //         mui.alert("手机号码格式不合法");
+    //         return false;
+    //     }
+    //     if(!verifyCode || verifyCode.trim() == "") {
+    //         mui.alert("请输入验证码");
+    //         return false;
+    //     }
+    //     if(verifyCode.length != 4) {
+    //         mui.alert("验证码长度不正确");
+    //         return false;
+    //     }
+    //     mui.ajax('{$bindPhone}',{
+    //         data:{
+    //             'phone' : phone,
+    //             'verifyCode' : verifyCode,
+    //             'type' : 'bindPhone',
+    //             'password' : password,
+    //             'latitude' : latitude,
+    //             'longitude' : longitude,
+    //             'accuracy' : accuracy,
+    //             'networkType' : networkType,
+    //             '_csrf' : '{$csrf}'
+    //         },
+    //         dataType:'json',
+    //         type:'post',
+    //         timeout:5000,
+    //         success:function(response){
+    //             mui.toast(response.message);
+    //             if(response.body.returnurl != '') {
+    //                 mui.openWindow(response.body.returnurl);
+    //             }
+    //         },
+    //         error:function(xhr,type,errorThrown){
+    //             mui.toast(type+" "+xhr.status+" "+xhr.readyState);//异常
+    //         }
+    //     });
+    // });
+
+    //用户服务协议
+    mui(".ssd_xsd_xserxr").on('tap', '.ye', function(){
+        mui.openWindow('/site/user-agreement');
+    });
+
+
+JS;
+$this->registerJs ( $js );
+?>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+wx.config(<?= json_encode($wechat->jsApiConfig([
+        'jsApiList' => [
+            'getLocation'
+        ]
+    ])) ?>
+);
+
+wx.ready(function () {
+    // 获取坐标
+    wx.getLocation({
+        success: function (res) {
+            var latitude 	= res.latitude; 	// 纬度，浮点数，范围为90 ~ -90
+            var longitude 	= res.longitude; 	// 经度，浮点数，范围为180 ~ -180。
+            var speed 		= res.speed; 		// 速度，以米/每秒计
+            var accuracy 	= res.accuracy; 	// 位置精度
+            $('#latitude').val(latitude);
+            $('#longitude').val(longitude);
+            $('#accuracy').val(accuracy);
+        },
+        cancel: function (res) {
+            alert('用户拒绝授权获取地理位置');
+        }
+    });
+
+    // 获取当前网络环境
+    wx.getNetworkType({
+	    success: function (res) {
+	        var networkType = res.networkType; // 返回网络类型2g，3g，4g，wifi
+            $('#networkType').val(networkType);
+	    }
+	});
+});
+</script>

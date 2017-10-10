@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="csrf-param" content="_csrf">
+		<meta name="csrf-token" content="NlRfclpNZ056GgZCFigRG1gmGgMNKFInRj0LC2woURd.AGsCL3wzKg==">
+		<title>发布</title>
+		<style>
+			input,
+			input:focus,
+			input:active {
+				user-select: text;
+			}
+		</style>
+
+		<meta name="keywords" content="秘语蜜语,时光密语,密语">
+		<meta name="description" content="">
+		<link href="css/mui.min.css" rel="stylesheet">
+		<link href="css/base.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<style>
+			.mask {
+				top: 0px;
+				filter: alpha(opacity=60);
+				background-color: #777;
+				z-index: 100;
+				left: 0px;
+				opacity: 0.2;
+				-moz-opacity: 0.2;
+			}
+			
+			.sd_iuiu_xsdxs {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 999999;
+				background: #fff;
+				display: none
+			}
+			
+			.sd_audio_add {
+				border: 2px solid rgba(204, 204, 204, 0.35);
+			}
+			
+			.ad_masks {
+				opacity: 0.5;
+				filter: alpha(opacity=50);
+				-moz-opacity: 0.5;
+				-khtml-opacity: 0.5;
+				position: absolute;
+				background: #000;
+				overflow: hidden;
+			}
+			
+			.xd_xsd_ximh.av .ssd_xsd_xddx,
+			.xd_xsd_ximh.av .ssd_xsd_xddx_c {
+				display: none
+			}
+			
+			.xd_xsd_ximh.av.act .ssd_xsd_xddx,
+			.xd_xsd_ximh.av.act .ssd_xsd_xddx_c {
+				display: block
+			}
+			
+			.ssd_xsd_xddx_c {
+				position: absolute;
+				right: -7px;
+				top: -9px;
+				color: #141414;
+			}
+		</style>
+
+		<header class="mui-bar mui-bar-nav pd">
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf">取消</button>
+			<button class="mui-btn-link mui-btn-nav mui-pull-right ye" id="up_load">发布</button>
+		</header>
+
+		<div class="mui-content">
+			<section class="pd pt10 pm10 bgff">
+				<textarea placeholder="这一刻的想法..." class="fz14 xsd_xsd_xserx" id="textinput" rows="4"></textarea>
+				<section class="sd_xsd_xsdxrx pm10 bbm" id="container">
+					<p class="xd_xsd_ximh fl xd_xsd_ximh_a pickfiles" id="pickfiles">
+						<img src="http://miyu.liebaba.com/static/v1/img/sdf_a.jpg" class="add_res">
+					</p>
+					<?php if($headerTag==1){ ?>
+					<p  class="xd_xsd_ximh fl pr av " >
+						<img src="<?= yii::$app->params['static_cdn'] ?>/static/<?=USE_VERSION?>/img/sdf_b.jpg" class="lu_ssd_xdf">
+						<i class="mui-icon mui-icon-close ssd_xsd_xddx_c fz24"></i>
+					</p>
+				    <?php } ?>
+					<p class="qc"></p>
+				</section>
+
+				<ul class="sd_iuu_xseex">
+					<!-- <li class="fz12 pr ">
+                <a href="#" class="z14">
+                    <i class="f_i map_iconx"></i>
+                    <span class="dfdf_xsd_xd">所在位置</span>
+
+                    <i class="fa fa-angle-right sd_xsd_xsexr zc"></i>
+                </a>
+            </li> -->
+					<li class="fz12 pr sd_sdd_Xsdrf_s   checktagbox">
+						<!--<a href="#" class="z14">
+							<i class="f_i zsd_xsd_xddx"></i>谁可以看
+							<span class="ml40 sd_sd_xds" style="margin-left: 35px;"></span>
+							<p class="qc"></p>
+							<i class="fa fa-angle-right sd_xsd_xsexr zc"></i>
+						</a>-->
+						<span class="z14">
+	                		<i class="f_i zsd_xsd_xddx"></i> 标签
+							<i class="fa fa-angle-right sd_xsd_xsexr zc"></i>
+	                		<span class="fr mr20 zc mt2 taglist">标签一</span>
+						</span>
+						<section class="uyt_xsd_xsdfxf">
+							<header class="mui-bar mui-bar-nav pd sdsd_xdsd_xerx">
+								<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf qw_xsfxxf">取消</button>
+								<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right ye suce_iuy_xd"> 完成</button>
+							</header>
+							<div class="mt10 bgff">
+								<section class="pd">
+									<p class="pt20 pm20 bbm cen z14 fz16">
+										点击你要选择的标签
+									</p>
+									<section class="ssd_xsd_xdedfx zc tagbox">
+										<span>标签一</span>
+										<span>标签二</span>
+										<span>标签三</span>
+										<span>标签四</span>
+										<span>标签五</span>
+										<span>标签六</span>
+										<span>标签七</span>
+										<span>标签八</span>
+										<span>标签九</span>
+										<span>标签十</span>
+										<span>标签十一</span>
+										<span>标签十二</span>
+									</section>
+								</section>
+							</div>
+						</section>
+					</li>
+				</ul>
+			</section>
+		</div>
+
+		<section class="mt10 pd bgff ssd_xsd_xdffx">
+			<ul class="sd_iuu_xseex">
+				<li class="fz12 pr sd_iuy_xdrfx wholook">
+					<span class="z14">
+                		<i class="f_i sd_xsd_xds a_r"> </i> 谁可以看
+						<i class="fa fa-angle-right sd_xsd_xsexr zc"></i>
+                	<span class="fr mr20 zc mt2 df_xsdfx">公开</span>
+					</span>
+					<section class="uyt_xsd_xsdfxf ">
+						<header class="mui-bar mui-bar-nav pd sdsd_xdsd_xerx">
+							<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf ssd_xsd_xdrrx"> 取消</button>
+							<span class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right ye suce_iuy_xdxcc_xsr">完成</span>
+						</header>
+						<div class="mt10 bgff pd">
+							<ul class="sd_iuy_xsd_xdf">
+
+								<li look="1" class="act">
+									<p class="z14 fz18">公开</p>
+									<p>所有朋友可见</p>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li look="2">
+									<p class="z14 fz18">私密</p>
+									<p>仅自己可见</p>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li look="3">
+									<p class="z14 fz18">部分可见</p>
+									<p>填写的朋友可见</p>
+									<i class="f_i sd_uyt_sswexd"></i>
+									<section class="sd_uiuy_xfx mt10">
+										<p class="sd_dfdf_Xexc pr">
+											<input type="tel" class="fz14" placeholder="请输入您朋友的手机号">
+											<i class="mui-icon mui-icon-plus dsf_xssf_b"></i>
+											<i class="mui-icon mui-icon-trash dsf_xssf_a"></i>
+										</p>
+									</section>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</li>
+				<li class="fz12 z14 pr  sd_iuy_xdrfx_xde">
+					<a class="z14">
+						<i class="f_i sd_xsd_xds a_t"> </i> 打开时间
+						<i class="fa fa-angle-right sd_xsd_xsexr zc"></i>
+					</a>
+					<span class="fr mr20 zc mt2 df_xsdfxssd">明天</span>
+					<section class="uyt_xsd_xsdfxf ">
+						<header class="mui-bar mui-bar-nav pd sdsd_xdsd_xerx">
+							<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf ssd_xsd_xdrrx_c">取消</button>
+							<span class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right ye suce_iuy_xdxcc_xsr_c">完成</span>
+						</header>
+						<div class="mt10 bgff pd">
+							<ul class="sd_iuy_xsd_xdf sd_iuy_xsd_xdf_v opentime">
+								<li openkey="1">
+									<span class="fz18">现在</span>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li openkey="2" class="act">
+									<span class="fz18">明天</span>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li openkey="3">
+									<span class="fz18">一周后</span>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li openkey="4">
+									<span class="fz18">一个月后</span>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+								<li openkey="5">
+									<span class="fz18">一年后</span>
+									<i class="f_i sd_uyt_sswexd"></i>
+								</li>
+							</ul>
+
+						</div>
+					</section>
+				</li>
+
+			</ul>
+		</section>
+
+		<!--录音弹出层-->
+
+		<section class="mt10 pd bgff">
+			<ul class="sd_iuu_xseex">
+				<li class="fz12 pr">
+					<a href="#" class="z14">
+						<i class="f_i sd_xsd_xds a_y"> </i> 接受打赏
+						<div class="mui-switch mui-switch-mini mui-active ssd_xsd_xdrxf dashang">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</a>
+				</li>
+
+				<li class="fz12 z14 pr">
+					<a href="#" class="z14">
+						<i class="f_i sd_xsd_xds a_u"> </i> 实物秘语瓶
+						<div class="mui-switch mui-switch-mini  ssd_xsd_xdrxf ax shiwu">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<!-- 收货信息弹出层-->
+		<section class="sd_Iuy_fix" style="z-index: 10001;">
+			<section class="sd_uiuy_xsdxe bgff mui-col-xs-9 pt30 pm20 pr">
+				<i class="f_i sd_close"></i>
+				<p class="sd_iuyu_xsdx">
+					<input type="text" id="consignee_name" placeholder="请填写收货人姓名">
+				</p>
+				<p class="sd_iuyu_xsdx">
+					<input type="text" id="consignee_phone" placeholder="请填写收货人电话">
+				</p>
+				<p class="sd_iuyu_xsdx">
+					<textarea id="consignee_address" placeholder="请填写收货地址" rows="3"></textarea>
+				</p>
+				<p class="mt50 sd_kiuyu_xsd">
+					<input type="text" id="consignee_nickname" placeholder="请输入您的昵称">
+				</p>
+			</section>
+		</section>
+
+		<section class="mt10 pd ssd_xsd_xdffx cen">
+			<!--<ul class="sd_iuu_xseex">
+				<li class="fz12 pr hongbaobtn">
+					<a href="#" class="z14">
+						<i class="f_i sd_xsd_xds a_y"> </i>
+						包红包
+					</a>
+				</li>
+			</ul> -->
+			<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined red-envelope hongbaobtn" style="width: 80%;height: 42px;">包红包</button>
+			<!--选择打开时间-->
+			<section class="uyt_xsd_xsdfxf uyt_xsd_red_envelope">
+				<header class="mui-bar mui-bar-nav pd sdsd_xdsd_xerx">
+					<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf ssd_xsd_xdrrx_c">
+	            取消
+	        </button>
+					<span class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right ye suce_iuy_xdxcc_xsr_c">
+	            完成
+	        </span>
+				</header>
+				<div class="mt10 bgff pd">
+					<ul class="sd_iuy_xsd_xdf sd_iuy_xsd_xdf_v">
+						<li>
+							<span class="fz18">现在</span>
+							<i class="f_i sd_uyt_sswexd"></i>
+						</li>
+						<li class="act">
+							<span class="fz18">明天</span>
+							<i class="f_i sd_uyt_sswexd"></i>
+						</li>
+						<li>
+							<span class="fz18">一周后</span>
+							<i class="f_i sd_uyt_sswexd"></i>
+						</li>
+						<li>
+							<span class="fz18">一个月后</span>
+							<i class="f_i sd_uyt_sswexd"></i>
+						</li>
+						<li>
+							<span class="fz18">一年后</span>
+							<i class="f_i sd_uyt_sswexd"></i>
+						</li>
+					</ul>
+
+				</div>
+
+			</section>
+			<!--包红包-->
+			<section class=" hongbao ">
+				<header class="mui-bar mui-bar-nav pd sdsd_xdsd_xerx">
+					<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left cf hongbaoq">取消</button>
+				</header>
+				<div class="mt10 bgff fz12 z14">
+					<div class="hongbaoinput">
+						<div class="mui-input-row">
+							<label>总金额：</label>
+							<input type="text" class="mui-input-clear hongbaomoney" placeholder="0.00">
+						</div>
+						<p class="checkhbtype">当前为拼手气红包，改为普通红包</p>
+						<div class="mui-input-row">
+							<label>红包个数：</label>
+							<input type="text" class="mui-input-clear fz12 z14 hongbaonum" placeholder="填写个数">
+						</div>
+						<div class="mui-input-row gdje" style="display: none;">
+							<label>红包金额：</label>
+							<input type="text" class="mui-input-clear fz12 z14 hongbaoone" placeholder="单个红包金额">
+						</div>
+						<div class="mui-input-row">
+							<input type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" class="mui-input-clear fz12 z14" placeholder="恭喜发财，大吉大利！">
+						</div>
+
+					</div>
+					<button type="button" class="mui-btn mui-btn-danger fz12 hongbaook">塞进红包</button>
+				</div>
+			</section>
+		</section>
+
+		<input type="file" class="sd_iiu_xdsdx" id="ssd_ooie" change="previewFile()">
+
+		<input type="hidden" name="type" id="type" value="">
+		<!-- 初始化发布类型 -->
+		<input type="hidden" name="latitude" id="latitude" value="">
+		<input type="hidden" name="longitude" id="longitude" value="">
+		<input type="hidden" name="accuracy" id="accuracy" value="">
+		<!-- 坐标精度 -->
+		<input type="hidden" name="networkType" id="networkType" value="">
+		<!-- 网络环境 -->
+		<input type="hidden" name="serverId" id="serverId" value="">
+		<!-- 录音微信的serverId -->
+		<input type="hidden" name="localId" id="localId" value="">
+		<div id="allmap" class="sd_xsdxe"></div>
+
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=YQE0a6NEnTynXOjA0Ba0RHt79E1PqupR"></script>
+
+		<!--底部-->
+		<footer class="sd_uuy_xsdx box cen">
+
+			<a class="f_i sd_xsd_xsdfxd pagePublish"></a>
+			<a class="box_a cf fz12 pageIndex">
+				<i class="f_i ssd_asdcxd"></i><br> 首页
+			</a>
+			<a class="box_a cf fz12 pageMyHome">
+				<i class="f_i ssd_asdcxd a_b"></i><br> 个人中心
+			</a>
+		</footer>
+		<div class="mmask"></div>
+		<div class="checkbtn">
+			<button datatype="1" type="button" class="mui-btn mui-btn-primary">文字</button>
+			<button datatype="2" type="button" class="mui-btn mui-btn-success">图片</button>
+			<button datatype="3" type="button" class="mui-btn mui-btn-warning luyin">录音</button>
+			<button datatype="4" type="button" class="mui-btn mui-btn-danger">视频</button>
+		</div>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/moxie.js"></script>
+		<script src="js/plupload.dev.js"></script>
+		<script src="js/zh_CN.js"></script>
+		<script src="js/qiniu.js"></script>
+		<!--		<script src="js/jquery.js"></script>-->
+		<script src="js/coomon.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+
+						$('body').height(innerHeight);
+						mui.init();
+						var filer = {
+							mime_types: [ //只允许上传图片和zip文件
+								{ title: "Image files", extensions: "jpg,gif,png" },
+							],
+							prevent_duplicates: true //不允许选取重复文件
+						}
+						$(function() {
+							//判断是否是微信
+							var wei = isWeiXin();
+							console.log('微信浏览器',wei);
+							if(!wei) {
+								$('.luyin').hide();
+								$('.lu_ssd_xdf').hide();
+                                baidumap ();
+							}else{
+								$('.lu_ssd_xdf').show();
+							}
+							//显示遮罩和发布类型
+							$('.mmask').show();
+							$('.checkbtn').show();
+							//选择发布类型 并存储
+
+							$('.checkbtn button').click(function() {
+								putStorage('type', $(this).attr('datatype'));
+								//如果选择文字，隐藏上传按钮
+								if($(this).attr('datatype') == 1) {
+									$('#pickfiles').hide();
+								}
+								if($(this).attr('datatype') == 2) {
+									filer = {
+										mime_types: [ //只允许上传图片
+											{ title: "Image files", extensions: "jpg,gif,png" },
+										],
+										prevent_duplicates: true //不允许选取重复文件
+									}
+								}
+								//如果在微信内核中选择录音，隐藏上传按钮
+								if($(this).attr('datatype') == 3) {
+									$('#pickfiles').hide();
+								}
+								if($(this).attr('datatype') == 4) {
+									filer = {
+										mime_types: [ //只允许上传视频
+											{ title: "Video files", extensions: "flv,mpg,mpeg,avi,wmv,mov,asf,rm,rmvb,mkv,m4v,mp4" },
+										],
+										prevent_duplicates: true //不允许选取重复文件
+									}
+								}
+								$('.mmask').hide();
+								$('.checkbtn').hide();
+							})
+
+							$(".sd_sd_xds").text($(".ssd_xsd_xdedfx span").eq(0).text());
+							// 百度地图API功能
+							function baidumap (){
+                               var map = new BMap.Map("allmap");
+                                var point = new BMap.Point(116.331398, 39.897445);
+                                map.centerAndZoom(point, 18);
+
+                                var geolocation = new BMap.Geolocation();
+
+                                putStorage('lng', 0);
+                                putStorage('lat', 0);
+                                geolocation.getCurrentPosition(function(r) {
+                                    if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+                                        var mk = new BMap.Marker(r.point);
+                                        map.addOverlay(mk);
+                                        map.panTo(r.point);
+                                        console.log('您的位置：' + r.point.lng + ',' + r.point.lat)
+                                        $("#latitude").val(r.point.lat);
+                                        $("#longitude").val(r.point.lng);
+                                        putStorage('lng', r.point.lng);
+                                        putStorage('lat', r.point.lat);
+                                        var apiUrl = 'http://api.map.baidu.com/geocoder/v2/';
+                                        $.ajax(apiUrl, {
+                                            data: {
+                                                'output': 'json',
+                                                'ak': 'YQE0a6NEnTynXOjA0Ba0RHt79E1PqupR',
+                                                'location': r.point.lat + ',' + r.point.lng,
+                                                '_': new Date().getTime()
+                                            },
+                                            dataType: 'jsonp',
+                                            crossDomain: true,
+                                            success: function(data) {
+                                                if(data && data.status == '0') {
+                                                    console.log(data.result);
+                                                    // alert(data.result.sematic_description);
+                                                    $(".map_address").text(data.result.formatted_address);
+                                                }
+                                            }
+                                        });
+
+                                    } else {
+                                        alert('failed' + this.getStatus());
+                                    }
+                                }, {
+                                    enableHighAccuracy: true
+                                }) 
+                            }
+
+							/* 录音叉叉按钮触发*/
+							$(".ssd_xsd_xddx_c").on("click", function() {
+								// $(this).parent().remove();
+								$(".lu_ssd_xdf").attr('src', "http://miyu.liebaba.com/static/v1/img/sdf_b.jpg");
+								$(".lu_ssd_xdf").removeClass("sd_audio_add");
+								$(this).parent().removeClass("act");
+								$("#serverId").val('');
+								$("#localId").val('');
+							});
+							//获取标签
+							ajax('/v1/publish/tags', function(data) {
+								console.log(data);
+								data = data.body;
+								var txt = '';
+								$('.taglist').text(data[0].name);
+								putStorage('tagid', data[0].id);
+								for(var i = 0; i < data.length; i++) {
+									txt += '<span tagid=' + data[i].id + '>' + data[i].name + '</span>'
+								}
+								$('.tagbox').html(txt);
+								/*  标签按钮触发*/
+								$(".sd_sdd_Xsdrf_s").on("click", function() {
+									var act_len = $(".act").length;
+									$(this).addClass("act");
+                                    
+								});
+
+								$(".ssd_xsd_xdedfx span").on("click", function() {
+
+									var act_len = $(".ssd_xsd_xdedfx .act").length;
+									if(act_len <= 2) { //分类标签最多允许添加三个
+										$(this).toggleClass("act");
+									} else {
+										var act_class = $(this).attr("class");
+										if(act_class == "act") {
+											$(this).toggleClass("act");
+										}
+									}
+                                    
+                                    
+									// console.log(j_sd.length);
+								});
+							})
+
+							/*标签完成按钮触发*/
+							$(".suce_iuy_xd").on("click", function() {
+                                event.stopPropagation();
+								var j_sd = []; //标签
+								var tagtxt = [];
+								$(".ssd_xsd_xdedfx span").map(function() {
+									if($(this).hasClass("act")) {
+										j_sd.push($(this).attr('tagid'));
+										tagtxt.push($(this).text());
+									}
+								});
+								putStorage('tagid', j_sd);
+                                var act_len = $(".ssd_xsd_xdedfx .act").length;
+                                if(act_len == 0){
+                                    $('.taglist').text($(".ssd_xsd_xdedfx span").eq(0).text());
+                                }else{
+                                    $('.taglist').text(tagtxt.join());  
+                                }
+								
+                                console.log($(this).parents('.sd_sdd_Xsdrf_s').hasClass('act'));
+                                $(this).parents('.sd_sdd_Xsdrf_s').removeClass('act');
+                                
+							});
+							/*  取消*/
+							$(".qw_xsfxxf").on("tap", function() {
+								$(this).parents('.sd_sdd_Xsdrf_s').removeClass('act');
+							});
+
+							/*谁都可见*/
+							$('.wholook').on('tap', function() {
+								$(this).addClass('act');
+                                $('.hongbaobtn').hide();
+							})
+							/* 列表点击触发*/
+							var sd_iuu = 0, //0=公开 1=私密 2=部分可见
+								sdj_i = [{
+									"name": "公开"
+								}, {
+									"name": "私密"
+								}, {
+									"name": "部分可见",
+									"jhg_s": []
+								}];
+							putStorage('look', 1);
+							$(".wholook li").on('tap', function() {
+								$(".wholook li").removeClass("act");
+								$(this).addClass("act");
+								putStorage('look', $(this).attr('look'));
+								sd_iuu = $(this).index();
+							});
+							/*  部分可见add按钮触发*/
+							$("body").on("click", ".dsf_xssf_b", function() {
+								sdsd($(this).prev());
+							});
+							/*删除按钮触发*/
+							$("body").on("click", ".dsf_xssf_a", function() {
+								$(this).parent().remove();
+							});
+							/* 谁可以看完成按钮触发事件*/
+							$(".suce_iuy_xdxcc_xsr").on("tap", function(e) {
+								e.stopPropagation();
+                                $('.hongbaobtn').show();
+								$(this).parents(".sd_iuy_xdrfx").removeClass("act");
+								$(".ssd_xsd_xdffx").removeClass("sdd_ssd_Xdex");
+								$(".df_xsdfx").text(sdj_i[sd_iuu].name);
+								if(sd_iuu == 2) {
+									var sd_iis = [];
+									$(".sd_uiuy_xfx input").map(function() {
+										sd_iis.push($(this).val());
+									});
+									putStorage('looklist', sd_iis);
+									sdj_i[sd_iuu].jhg_s = sd_iis;
+								}
+							})
+							/*取消按钮触发*/
+							$(".ssd_xsd_xdrrx").on("click", function(e) {
+								e.stopPropagation();
+                                $('.hongbaobtn').show();
+								$(this).parents(".sd_iuy_xdrfx").removeClass("act");
+							});
+							$(".sd_iuy_xdrfx").on("tap", function() {
+								$(this).addClass("act");
+								$(".ssd_xsd_xdffx").addClass("sdd_ssd_Xdex");
+							});
+
+							/*确认按钮触发*/
+							$(".sd_iiu_xsdx").on("click", function() {
+								sd_si.type = sd_iu;
+								var sd_sdx = [];
+								if(sd_iu == 2) {
+									$($(".ssd_Xsd_xsdx li")).map(function() {
+										if($(this).hasClass("act")) {
+											sd_sdx.push($(this).find(".fz14").text());
+										}
+									});
+								}
+								sd_si.ssd_x = sd_sdx;
+								$(".sd_iuiu_xsdxs").removeClass("show");
+								console.log(sd_si);
+							});
+
+							/* 打开时间*/
+							/* 完成按钮触发*/
+							var sd_iuux = "现在";
+							$(".suce_iuy_xdxcc_xsr_c").on("click", function(e) {
+								e.stopPropagation();
+                                $('.hongbaobtn').show();
+								$(this).parents(".sd_iuy_xdrfx_xde").removeClass("act");
+								$(".df_xsdfxssd").text(sd_iuux);
+								$(".ssd_xsd_xdffx").removeClass("sdd_ssd_Xdex");
+							});
+
+							$(".ssd_xsd_xdrrx_c").on("click", function(e) {
+								e.stopPropagation();
+                                $('.hongbaobtn').show();
+								$(".ssd_xsd_xdffx").removeClass("sdd_ssd_Xdex");
+								$(this).parents(".sd_iuy_xdrfx_xde").removeClass("act");
+							});
+							putStorage('openkey', 2);
+							/* 列表点击事件*/
+							$(".sd_iuy_xsd_xdf_v li").on("click", function() {
+								$(".sd_iuy_xsd_xdf_v li").removeClass('act');
+								$(this).addClass('act');
+								var ing_text = $(this).find("span").text().trim(); //获取点击的内容
+								putStorage('openkey', $(this).attr('openkey'));
+								sd_iuux = ing_text;
+							});
+							/*打开时间按钮触发事件*/
+							$(".sd_iuy_xdrfx_xde").on("click", function() {
+								$(this).addClass("act");
+								$(".ssd_xsd_xdffx").addClass("sdd_ssd_Xdex");
+                                $('.hongbaobtn').hide();
+							});
+
+							/*录音按钮触发*/
+							$(".lu_ssd_xdf").on("click", function() {
+								$(".sd_iu_pup").addClass("show");
+							});
+							/*录音取消触发*/
+							$(".bgff .quyt_xsdxd").on("click", function() {
+								$(".sd_iu_pup").removeClass("show");
+							});
+
+							// $(".xd_xsd_ximh_a").on("click",function(){//浏览图片
+							// 	$("#ssd_ooie").click();
+							// });
+
+							$("body").on("click", ".ssd_xsd_xddx", function() { //叉叉点击删除图片
+								// console.log($(this).parents(".xd_xsd_ximh"));return;
+								$(this).parents(".xd_xsd_ximh").remove();
+							});
+
+							// $(".mui-pull-right.ye").on("click",function(){//发布按钮点击事件
+							// 	$(".sd_Iuy_fix").addClass("show");
+							// });
+
+							mui(".ssd_xsd_xdrxf.ax").each(function() {
+								//循环所有toggle
+								this.addEventListener('toggle', function(event) {
+									if(event.detail.isActive) {
+										$(".sd_Iuy_fix").addClass("show")
+									}
+								});
+							});
+							putStorage('shiwu', 'false');
+							putStorage('tagid', '1');
+							/* 弹出层的叉叉按钮点击事件 */
+							$(".sd_close").on("click", function() {
+								var consignee_name = $("#consignee_name").val(); //收货人名称
+								var consignee_phone = $("#consignee_phone").val(); //收货人电话
+								var consignee_address = $("#consignee_address").val(); //收货人地址
+								var consignee_nickname = $("#consignee_nickname").val(); //收货人昵称
+								//						存储收货信息
+								putStorage('shiwu', 'true');
+								putStorage('consignee_name', consignee_name);
+								putStorage('consignee_phone', consignee_phone);
+								putStorage('consignee_address', consignee_address);
+								putStorage('consignee_nickname', consignee_nickname);
+								if(!consignee_name || !consignee_phone || !consignee_address) {
+									$(".ax").removeClass("mui-active");
+									$(".ax").find("div").css({
+										"transition-duration": "0.2s",
+										"transform": "translate(0px, 0px)"
+									});
+								}
+								$(this).parents(".sd_Iuy_fix").removeClass("show");
+								
+								
+							});
+
+
+						/*部分朋友列表事件*/
+						function sdsd(x) {
+							var ihy_s = $(x).val(); //获取输入框的值
+							if(ihy_s == "") {
+								alert("请输入朋友的姓名");
+								$(x).focus()
+								return;
+							}
+							if($(".sd_dfdf_Xexc").length > 2) {
+								alert("最多添加3个")
+								return;
+							}
+							$(x).parent().addClass("act")
+							$(".sd_uiuy_xfx").append(' <p class="sd_dfdf_Xexc pr"> <input type="tel" class="fz14" placeholder="请输入您朋友的手机号"> <i class="mui-icon mui-icon-plus dsf_xssf_b"></i><i class="mui-icon mui-icon-trash dsf_xssf_a"></i></p>')
+						}
+
+						function previewFile() {
+							var file = document.querySelector('#ssd_ooie').files[0];
+							var reader = new FileReader();
+							reader.onloadend = function() {
+								$(".sd_xsd_xsdxrx").prepend('  <p  class="xd_xsd_ximh fl pr" >  <img src="' + reader.result + '"><i class="mui-icon mui-icon-close ssd_xsd_xddx fz24"></i></p>')
+							}
+							if(file) {
+								reader.readAsDataURL(file);
+							} else {}
+						}
+						ajaxp(ip+'/v1/publish/upload-token', function(data) {
+							console.log(data);
+						})
+						//引入Plupload 、qiniu.js后
+						var imgs = [];
+						var uploader = Qiniu.uploader({
+							runtimes: 'html5,flash,html4', // 上传模式,依次退化
+							browse_button: 'pickfiles', // 上传选择的点选按钮，**必需**
+							uptoken_url:'/v1/publish/upload-token', // Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+							unique_names: false, // 默认 false，key为文件名。若开启该选项，SDK为自动生成上传成功后的key（文件名）。
+							save_key: false, // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK会忽略对key的处理
+							domain: 'http://ooej4flec.bkt.clouddn.com/', // bucket 域名，下载资源时用到，**必需**
+							get_new_uptoken: false, // 设置上传文件的时候是否每次都重新获取新的token
+							container: 'container', // 上传区域DOM ID，默认是browser_button的父元素，
+							// max_file_size: '100mb',           			// 最大文件体积限制
+							flash_swf_url: '/js/plupload/Moxie.swf', // 引入flash,相对路径
+							max_retries: 3, // 上传失败最大重试次数
+							dragdrop: false, // 开启可拖曳上传
+							chunk_size: '4mb', // 分块上传时，每片的体积
+							auto_start: false, // 选择文件后自动上传，若关闭需要自己绑定事件触发上传
+							// 可以使用该参数来限制上传文件的类型，大小等，该参数以对象的形式传入，它包括三个属性：
+							filters: filer,
+							init: {
+								'FilesAdded': function(up, files) {
+									var img_len = uploader.files.length;
+                                    console.log('队列长度',img_len)
+									if(img_len >= 10) {
+										alert("只能上传9张图片");
+										return false;
+									}
+									for(var i = 0, len = files.length; i < len; i++) {
+										//构造html来更新UI
+										// var html = '<li id="file-' + files[i].id +'"></li>';
+										var html = '';
+										$(html).appendTo('#pickfiles');
+										! function(i) {
+											previewImage(files[i], function(imgsrc) {
+                                                console.log(files[i].id);
+												$(".sd_xsd_xsdxrx").prepend('  <p  class="xd_xsd_ximh fl pr" >  <img src="' + imgsrc + '" id="file-' + files[i].id + '"><i class="mui-icon mui-icon-close ssd_xsd_xddx fz24"></i></p>')
+											});
+										}(i);
+									}
+
+									plupload.each(files, function(file) {
+										var networkType = $('#networkType').val();
+//										var wei = isWeiXin();
+//										//							     	if(!wei){
+//										//							     		return;
+//										//							     	}
+//										if(networkType != 'wifi') {
+//											mui.confirm('上传将消耗流量', '您当前非wifi环境', btn, function(e) {
+//												if(e.index == 1) {
+//													uploader.start();
+//												} else {
+//													uploader.stop();
+//												}
+//											});
+//										} else {
+//											uploader.start();
+//										}
+									});
+								},
+								'BeforeUpload': function(up, file) {
+									// 每个文件上传前,处理相关的事情
+								},
+
+								'UploadProgress': function(up, file) {
+									// 每个文件上传时,处理相关的事情
+								},
+								'FileUploaded': function(up, file, info) {
+									// 每个文件上传成功后,处理相关的事情
+									// 其中 info 是文件上传成功后，服务端返回的json，形式如
+									// {
+									//    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+									//    "key": "gogopher.jpg"
+									//  }
+									// 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
+
+									// var domain = up.getOption('domain');
+									var res = JSON.stringify(info);
+									console.log(res); // 【获取到的上传后的文件信息，包含key,json】
+									var filekey = jQuery.parseJSON(info); // 【获取到的上传后的文件key】
+									console.log(filekey); // attachment/2017/04/18/o_1bduf678f1on5jr9330pji10657.jpg
+									
+									// var sourceLink = domain + res.key; // 获取上传成功后的文件的Url
+									// console.log(sourceLink);
+									imgs.push(filekey.key);
+									putStorage('imgs', imgs);
+								},
+								'Error': function(up, err, errTip) {
+									//上传出错时,处理相关的事情
+								},
+								'UploadComplete': function() {
+									//队列文件处理完毕后,处理相关的事情
+								},
+								'Key': function(up, file) {
+									// 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+									// 该配置必须要在 unique_names: false , save_key: false 时才生效
+
+									var ext = Qiniu.getFileExtension(file.name);
+									// var folder = $("#savepath").val();
+									// if(folder === '' || typeof(folder) === 'undefined'){
+									//     folder='default/';
+									// }
+									var key = "attachment/2017/04/28/" + file.id + "." + ext;
+
+									// var key = "attachment/2017/04/28/";
+									// do something with key here
+									return key
+								}
+							}
+						});
+
+						// uploader.init(); //初始化
+						// //绑定文件添加进队列事件
+						// uploader.bind('FilesAdded',function(uploader,files){
+						// 	for(var i = 0, len = files.length; i<len; i++){
+						// 		var file_name = files[i].name; //文件名
+						// 		//构造html来更新UI
+						// 		var html = '<li id="file-' + files[i].id +'"><p class="file-name">' + file_name + '</p><p class="progress"></p></li>';
+						// 		$(html).appendTo('#file-list');
+						// 		!function(i){
+						// 			previewImage(files[i],function(imgsrc){
+						// 				$('#file-'+files[i].id).append('<img src="'+ imgsrc +'" />');
+						// 			})
+						// 	    }(i);
+						// 	}
+						// });
+
+						//plupload中为我们提供了mOxie对象
+						//有关mOxie的介绍和说明请看：https://github.com/moxiecode/moxie/wiki/API
+						//如果你不想了解那么多的话，那就照抄本示例的代码来得到预览的图片吧
+						function previewImage(file, callback) { //file为plupload事件监听函数参数中的file对象,callback为预览图片准备完成的回调函数
+							if(!file || !/image\//.test(file.type)) return; //确保文件是图片
+							if(file.type == 'image/gif') { //gif使用FileReader进行预览,因为mOxie.Image只支持jpg和png
+								var fr = new mOxie.FileReader();
+								fr.onload = function() {
+									callback(fr.result);
+									fr.destroy();
+									fr = null;
+								}
+								fr.readAsDataURL(file.getSource());
+							} else {
+								var preloader = new mOxie.Image();
+								preloader.onload = function() {
+									preloader.downsize(300, 300); //先压缩一下要预览的图片,宽300，高300
+									var imgsrc = preloader.type == 'image/jpeg' ? preloader.getAsDataURL('image/jpeg', 80) : preloader.getAsDataURL(); //得到图片src,实质为一个base64编码的数据
+									callback && callback(imgsrc); //callback传入的参数为预览图片的url
+									preloader.destroy();
+									preloader = null;
+								};
+								preloader.load(file.getSource());
+							}
+						}
+						var btn = ['取消发布', '继续上传'];
+
+							//				红包
+							putStorage('hongbao', 'false')
+							$('.hongbaobtn').click(function() {
+								$('.hongbao').show();
+							})
+							$('.hongbaoq').click(function() {
+								$('.hongbao input').empty();
+								$('.hongbao').hide();
+							})
+							putStorage('hongbaotype', '1');
+							var trpeok = true;
+							$('.checkhbtype').on('click', function() {
+								if(trpeok) {
+									putStorage('hongbaotype', '1');
+									trpeok = false;
+									$('.checkhbtype').text('当前为普通红包，改为拼手气红包').css('color','#f00');
+									$('.gdje').show();
+									$('.hongbaomoney').attr('disabled', true);
+								} else {
+									putStorage('hongbaotype', '2');
+									trpeok = true;
+									$('.checkhbtype').text('当前为拼手气红包，改为普通红包').css('color','#0599f3');
+									$('.gdje').hide();
+									$('.hongbaomoney').attr('disabled', false);
+								}
+							})
+							//计算金额
+							$('.hongbaoone')[0].oninput = function() {
+								var num = $('.hongbaoone').val() * $('.hongbaonum').val();
+
+								if(isNumber(num)) {
+									$('.hongbaomoney').val(num);
+									//存入单个红包金额
+									putStorage('hongbaoone', $('.hongbaoone').val());
+								}
+							}
+//							ajax(ip+'/v1/publish/balance', function(data) {
+//								putStorage('allmoney', data.body.balance);
+//							})
+							putStorage('consignee_name', consignee_name);
+							putStorage('hongbao', 'true');
+							putStorage('money', 'false');
+							putStorage('hongbaonnum', 'false');
+							putStorage('hongbaoone', 'false');
+							putStorage('looklist', '');
+
+							$('.hongbaook').click(function() {
+								var bok = true;
+								if(isNumber($('.hongbaomoney').val()) == false || $('.hongbaomoney').val() == '') {
+									bok = false;
+								}
+								if(isNumber($('.hongbaonum').val()) == false || $('.hongbaonum').val() == '') {
+									bok = false;
+								}
+								if(bok = false) {
+									alert('红包信息输入错误！');
+									return;
+								}
+								//总金额getStorage('allmoney')
+								if($('.hongbaomoney').val() > 10) {
+									alert('您的余额不足以发红包！');
+									return;
+								}
+								if($('.hongbaomoney').val() > 500) {
+									alert('红包金额不能大于500元');
+									return;
+								}
+								var type = getStorage('hongbaotype');
+								if(type == '2' && $('.hongbaomoney').val() < 1) {
+									alert('普通红包总金额不能小于1元');
+								}
+								//存入红包信息
+								putStorage('hongbao', 'true');
+								putStorage('money', $('.hongbaomoney').val());
+								putStorage('hongbaonum', $('.hongbaonum').val());
+								putStorage('hongbaoone', $('.hongbaoone').val());
+								$('.hongbao').hide();
+							})
+							//				mui-switch-handle
+							//上传参数
+							var subdata = {
+								"type": getStorage('type'),
+								"typeTags": getStorage('tagid'),
+								"content": $('#textinput').val(),
+								"longitude": getStorage('lng'),
+								"latitude": getStorage('lat'),
+								"accuracy": 0,
+								"openTime": getStorage('openkey'),
+								"accept": 1, //"是否接受打赏:1接受【默认接受】,0不接受",
+								"allow": getStorage('look'), //"谁可以看,1=公开【默认公开】,2自己,3指定微信号(最多三个)",
+								"accountList": getStorage('looklist'),
+								"serverId": $('#localId').val(),
+								"imgList": {
+									"img": imgs, //图和视频信息都一致  根据type判断类型
+									"video": imgs
+								},
+								"physical": getStorage('shiwu') || true, //"是否是实物秘语瓶:1是(下面courier收货信息字段不能为空),2",
+								"courier": {
+									"recipient": getStorage('shiwu') || getStorage('consignee_name'),
+									"Address": getStorage('shiwu') || getStorage('consignee_address'),
+									"phone": getStorage('shiwu') || getStorage('consignee_phone'),
+									"sender": getStorage('shiwu') || getStorage('consignee_nickname'),
+									"note": "订单备注"
+								},
+								"isRedPacket": getStorage('hongbao') || true, //是否有红包
+								"redPacket": {
+									"type": getStorage('hongbaotype'), //红包类型
+									"quantity": getStorage('hongbaonum'), //"红包数量"
+									"unitPrice": getStorage('hongbaoone'), //"红包单价",
+									"totalMoney": getStorage('money'), //"红包总金额"
+								},
+								"_shuoming": "发布页数据样例<pre><br>发布页数据POST提交地址：http://miyu.liebaba.com/v1/publish/present <br>内容允许,A纯文字,B纯图片,C纯录音,D纯视频,E文字+图片,F文字+录音,G文字+视频<br><br>networkType(微信,app特有) 不等于 wifi 的时候上传视频和图片弹出提示 当前网络环境消耗流量 提示,确认则上传，否不上传<br><br></pre><br>如果成功，返回详情ID，跳转到详情页面提醒分享。<br> physical 如果是实物秘语，会返回详情ID和订单账单等待支付的页面，则需要往订单支付页面跳转，让用户选择账户余额支付还是在线支付或者取消支付，支付成功或者取消支付(取消支付实物秘语填写的收货信息后端会作为无效处理)，会跳到详情页面"
+							}
+							//点击发布
+							$('#up_load').click(function() {
+								$('.dashang').hasClass('mui-active') ? subdata.accept = '1': subdata.accept = '2';
+								$('.shiwu').hasClass('mui-active') ? subdata.physical = '1' : subdata.physical = '2';
+								console.log(subdata);
+								//请求
+//								ajaxp(ip+'/v1/publish/present',function(data){
+//									console.log(data);
+//								})
+							})
+							mui.init();
+							// 首页
+							mui(".sd_uuy_xsdx").on('tap', '.pageIndex', function() {
+								mui.openWindow({
+									url: "/",
+									show: {
+										autoShow: false
+									}
+								});
+							});
+							// 发布页
+							mui(".sd_uuy_xsdx").on('tap', '.pagePublish', function() {
+								mui.openWindow({
+									url: "/v1/publish/submit",
+									show: {
+										autoShow: false
+									}
+								});
+							});
+							// 个人中心
+							mui(".sd_uuy_xsdx").on('tap', '.pageMyHome', function() {
+								mui.openWindow({
+									url: "/v1/my/index",
+									show: {
+										autoShow: false
+									}
+								});
+							});
+
+					})
+    })
+		</script>
+	</body>
+
+</html>

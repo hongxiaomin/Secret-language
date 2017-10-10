@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="csrf-param" content="_csrf">
+		<meta name="csrf-token" content="aGk5UHVVdVE9EGgaMhhNIAcuFABBMRRiGQpRHEUwGhwND0keFzYyCQ==">
+		<title>秘语蜜语</title>
+		<style>
+			input,
+			input:focus,
+			input:active {
+				user-select: text;
+			}
+		</style>
+
+		<meta name="keywords" content="秘语蜜语,时光密语,密语">
+		<meta name="description" content="">
+		<link href="css/mui.min.css" rel="stylesheet">
+		<link href="css/base.css" rel="stylesheet">
+		<link href="css/swiper-3.4.2.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/swiper-3.4.2.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<!--<script src="js/mui.zoom.js"></script>-->
+		<script src="js/coomon.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title cf">秘语蜜语</h1>
+		</header>
+
+		<div class="mui-content" style="padding-bottom: 114px;">
+			<section class="index_banner">
+				<div class="swiper-container banner_ne">
+					<div class="swiper-wrapper" id="bannerbox">
+						<div class="swiper-slide"><a href=""></a><img src="img/czbaner.jpg"></div>
+						<div class="swiper-slide"><img src="img/czbaner.jpg"></div>
+						<div class="swiper-slide"><img src="img/czbaner.jpg"></div>
+					</div>
+					<div class="swiper-pagination">
+						
+					</div>
+					<!-- 分页器 -->
+					<div class="swiper-container"style="width: 38%;"><!--swiper容器[可以随意更改该容器的样式-->  
+				   
+				</div>
+
+			</section>
+			<section class="bgff pt20 pm10 box cen index_box_nav">
+				<a class="box_a zc fz12 box_nav" onclick="openLink('/');">
+					<i class="f_i ssd_xsd"></i><br> 吐槽
+				</a>
+				<a class="box_a zc fz12 box_nav">
+					<i class="f_i ssd_xsd a_b"></i><br> 蜜语
+				</a>
+				<a class="box_a zc fz12 box_nav">
+					<i class="f_i ssd_xsd a_c"></i><br> 时光瓶
+				</a>
+				<a class="box_a zc fz12 box_nav">
+					<i class="f_i ssd_xsd a_d"></i><br> 秘语墙
+				</a>
+				<a class="box_a zc fz12 box_nav">
+					<i class="f_i ssd_xsd a_e"></i><br> 热门
+				</a>
+			</section>
+			<div class="centerbox">
+			</div>
+		</div>
+
+		<audio controls="controls" id="J_prismPlayer"></audio>
+
+		<!--底部-->
+		<footer class="sd_uuy_xsdx box cen">
+
+			<a class="f_i sd_xsd_xsdfxd pagePublish"></a>
+			<a class="box_a cf fz12 pageIndex">
+				<i class="f_i ssd_asdcxd"></i><br> 首页
+			</a>
+			<a class="box_a cf fz12 pageMyHome">
+				<i class="f_i ssd_asdcxd a_b"></i><br> 个人中心
+			</a>
+		</footer>
+
+		
+		<script type="text/javascript">
+			mui.init();
+			 
+		</script>
+		<script src="js/coomon.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				$('body').height(innerHeight);
+
+				$(function(){
+					//获取数据
+					getindexdata();
+					ajax('/v1/default/banner',function(data){
+						data=data.body;
+						console.log(data);
+						var bannerhtml='';
+						for(var i=0;i<data.length;i++){
+							bannerhtml+='<div class="swiper-slide"><a href="'+data[i].openUrl+'"><img src="'+data[i].imgSrc+'"></a></div>';
+						}
+						$('#bannerbox').html(bannerhtml);
+						var mySwiper = new Swiper(".swiper-container",{  
+					        direction:"horizontal",/*横向滑动*/  
+					        loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/  
+					        pagination:".swiper-pagination",/*分页器*/  
+					        prevButton:".swiper-button-prev",/*前进按钮*/  
+					        nextButton:".swiper-button-next",/*后退按钮*/  
+					        autoplay:3000/*每隔3秒自动播放*/  
+					    }) 
+					})
+					
+				})
+				// 首页
+				mui(".sd_uuy_xsdx").on('tap', '.pageIndex', function() {
+					mui.openWindow({
+						url: "/",
+						show: {
+							autoShow: false
+						}
+					});
+				});
+				// 发布页
+				mui(".sd_uuy_xsdx").on('tap', '.pagePublish', function() {
+					mui.openWindow({
+						url: "submit.html",
+						show: {
+							autoShow: false
+						}
+					});
+				});
+				// 个人中心
+				mui(".sd_uuy_xsdx").on('tap', '.pageMyHome', function() {
+					mui.openWindow({
+						url: "my.html",
+						show: {
+							autoShow: false
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

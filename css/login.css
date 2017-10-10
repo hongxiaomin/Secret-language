@@ -1,0 +1,180 @@
+body{
+	background: url(../img/login-new-bg.png) no-repeat center top;
+	margin: auto;
+	background-size: cover;
+}
+.mui-content{
+	background-color: rgba(0,0,0,0);
+}
+.cm-icon-close{
+	width: 20px;
+	height: 20px;
+	background-image:url(../img/login-new-close.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute !important;
+	left: 10px;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+
+.cm-icon-nickname {
+    width: 26px;
+    height: 26px;
+    /*background-image: url(../img/login-new-account.png);*/
+    /*background-size: contain;*/
+	/*background-repeat: no-repeat;*/
+}
+.cm-icon-qr {
+   	width: 26px;
+    height: 26px;
+    /*background-image: url(../img/login-new-vq.png);*/
+    /*background-size: contain;*/
+	/*background-repeat: no-repeat;*/
+}
+.cm-icon-nickname_back{
+	background: url("../img/login-new-account.png")no-repeat center;
+	background-size: 55%;
+}
+.cm-icon-qr_back{
+	background: url("../img/login-new-vq.png")no-repeat center;
+	background-size: 55%;
+}
+.mui-content{
+	padding-top: 58%;
+}
+.cm-logo img{
+	width: 80px;
+	vertical-align: top;
+}
+
+.cm-input-group{
+	padding:30px 40px;
+	background-color: rgba(0,0,0,0);
+}
+.cm-input-group:before,
+.cm-input-group:after{
+	content: none;
+}
+.mui-input-group .mui-input-row:after{
+	background-color: #dadada;
+	left: 0;
+	opacity: .8;
+}
+.cm-input-group label{
+	width: 100px !important;
+}
+.mui-input-row label~input{
+	font-family: "微软雅黑","microsoft yahei";
+	font-size: 14px;
+	color: #000;
+}
+.mui-input-row label~input::-webkit-input-placeholder{
+	color: #dadada;
+}
+
+.cm-code{
+	position: relative;
+}
+.cm-code:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	height: 20px;
+	background-color: #dadada;
+	margin: auto;
+}
+.cm-code input{
+	font-family: "微软雅黑","microsoft yahei" !important;
+	color: #ea9696 !important;
+	width: auto !important;
+}
+.cm-btn-pink+.mui-ellipsis{
+	color: #000;
+	font-size: 14px;
+	padding: 10px 0;
+}
+.cm-btn-pink+.mui-ellipsis a{
+	color: #ea9696;
+	text-decoration: underline;
+}
+.cm-btn-pink {
+	background-color: #ea9696;
+	color: #FFFFFF;
+	border: 0;
+	border-radius: 30px;
+	font-size: 15px;
+	padding: 10px 0;
+}
+.cm-footer{
+	margin: 10px 40px;
+}
+.mui-input-group .mui-input-row{
+	height: 60px;
+	padding: 10px 0;
+}
+.cm-verifyCode {
+	min-width:100px
+}
+.mui-input-row .mui-btn {
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	line-height: 1.1;
+	float: right;
+	width: 15%;
+	padding: 13px 13px;
+}
+.mui-input-row label {
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	line-height: 1.1;
+	float: left;
+	width: 35%;
+	padding: 11px 8px;
+}
+.login_wx{
+	color: #929292;
+	text-align: center;
+	font-size: 12px;
+	position: relative;
+	height: 12px;
+	line-height: 12px;
+}
+.login_wx:before{
+	content: '';
+	position: absolute;
+	width: 20%;
+	height: 1px;
+	background-color: #929292;
+	left: 15%;
+	top: 5px;
+}
+.login_wx:after{
+	content: '';
+	position: absolute;
+	width: 20%;
+	height: 1px;
+	background-color: #929292;
+	right: 15%;
+	top: 5px;
+}
+.login_wx_img{
+	width: 12%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+@media (min-width: 375px) {
+
+	.login_wx_center{
+		margin-top: 2%;
+	}
+}
+@media (min-width: 375px) {
+	.login_wx_center{
+		margin-top: 20%;
+	}
+}
